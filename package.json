@@ -1,0 +1,16 @@
+{
+  "name": "projectturtlebackend",
+  "version": "1.0.0",
+  "description": "backend server to update turtle location",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "Jeremy Dain",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "moment": "^2.26.0",
+    "random-location": "^1.1.3"
+  }
+}
