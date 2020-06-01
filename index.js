@@ -12,7 +12,7 @@ const P = {
 
    
    
-app.get('/api', (req, res) => {
+app.get('/', (req, res) => {
     let dbCoordinates;
     fetch('https://projectturtle.000webhostapp.com/api/get/')
     .then((respone) => {return respone.json()})
@@ -34,7 +34,7 @@ app.get('/api', (req, res) => {
 
 })
 
-app.get('/',(req,res) => {
+app.get('/api',(req,res) => {
     res.send('hello world')
 })
 
