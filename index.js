@@ -5,7 +5,7 @@ const moment = require('moment')
 const fetch = require('node-fetch')
 const MongoClient = require('mongodb').MongoClient
 const app = express()
-const port = 456
+const port = process.env.PORT
 const P = {
     latitude: 45.888580 , 
     longitude: 3.104450
@@ -73,4 +73,4 @@ app.get('/', (req, res) => {
 
 
 
-app.listen(port | process.env.PORT, () => console.log(`Example app listening at http://localhost:${port}`))
+app.listen( port, () => console.log(`Example app listening at http://localhost:${port}`))
