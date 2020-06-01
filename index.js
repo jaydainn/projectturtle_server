@@ -1,24 +1,35 @@
 const express = require('express')
 const randomLocation = require('random-location')
 const moment = require('moment')
+const fetch = require('node-fetch')
 const app = express()
-const port = 420
+const port = 80
 const P = {
     latitude: 45.888580 , 
     longitude: 3.104450
   }
    
-  const R = 20 // meters
+
    
    
 app.get('/api', (req, res) => {
-    const obj ={
-        coordinates : randomLocation.randomCirclePoint(P, R) , 
-        time: moment().format()
+    let dbCoordinates;
+    fetch('https://projectturtle.000webhostapp.com/api/get/')
+    .then((respone) => {return respone.json()})
+    .then((data) =>{ dbCoordinates = data})
+    .then(() => {
+        let longitude = Number(dbCoordinates.coordinates.longitude)
+        let latitude = Number(dbCoordinates.coordinates.latitude)
+        const obj ={
+            coordinates : {"latitude" : latitude , "longitude" : longitude} , 
+            time: moment().format()
+    
+    
+        }
+        res.send(obj)
 
-
-    }
-    res.send(obj)
+    })
+    
 
 })
 
