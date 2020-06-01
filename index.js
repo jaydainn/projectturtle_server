@@ -3,7 +3,7 @@ const randomLocation = require('random-location')
 const moment = require('moment')
 const fetch = require('node-fetch')
 const app = express()
-const port = 420
+const port = process.env.PORT
 const P = {
     latitude: 45.888580 , 
     longitude: 3.104450
