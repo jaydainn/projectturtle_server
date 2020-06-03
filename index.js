@@ -5,7 +5,7 @@ const moment = require('moment')
 const fetch = require('node-fetch')
 const MongoClient = require('mongodb').MongoClient
 const app = express()
-const port = process.env.PORT
+const port = 80
 const P = {
     latitude: 45.888580 , 
     longitude: 3.104450
